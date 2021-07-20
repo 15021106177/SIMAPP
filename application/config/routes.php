@@ -126,6 +126,7 @@ $route['laporan/export_pengadaan/(:any)/(:any)'] = 'Laporan/export_pengadaan/(:a
 // sync 
 $route['sync'] = 'Sync/index';
 $route['sync/syncSimak'] = 'Sync/syncSimak';
+
 //Settingan 
 $route['(:any)'] = 'errors/show_404';
 $route['(:any)/(:any)'] = 'errors/show_404';
