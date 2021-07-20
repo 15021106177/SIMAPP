@@ -51,7 +51,6 @@ class Sync extends CI_Controller
                             'merek' => $row[2],
                             'tahun_perolehan' => $row[3],
                         ];
-
                         // Simpan data ke database.
                         $this->mb->savecsv($data);
                     }
