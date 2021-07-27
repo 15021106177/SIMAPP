@@ -123,6 +123,10 @@ $route['laporan/search_pengadaan'] = 'Laporan/searchPengadaan';
 $route['laporan/print_pengadaan/(:any)/(:any)'] = 'Laporan/printPengadaan/(:any)/(:any)';
 $route['laporan/export_pengadaan/(:any)/(:any)'] = 'Laporan/export_pengadaan/(:any)/(:any)';
 
+// sync 
+$route['sync'] = 'Sync/index';
+$route['sync/syncSimak'] = 'Sync/syncSimak';
+
 
 //Settingan 
 $route['(:any)'] = 'errors/show_404';
