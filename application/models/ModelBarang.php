@@ -41,6 +41,12 @@ class ModelBarang extends CI_Model {
 		return $res;
 	}
 
+	public function savecsv($fetchData)
+	{
+		$query = $this->db->insert_batch('barang', $fetchData);
+		return $query;
+	}
+
 }
 
 /* End of file ModelBarang.php */

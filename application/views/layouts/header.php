@@ -295,6 +295,12 @@
           </ul>
         </li>
         <li class="nav-item has-treeview">
+          <a href="<?=base_url('sync')?>" class="nav-link">
+            <i class="nav-icon fas fa-sync-alt"></i>
+            <p>Sync SIMAK</p>
+          </a>
+        </li>
+        <li class="nav-item has-treeview">
           <a href="<?=base_url('pengaturan')?>" class="nav-link <?=isset($active_menu_png)?$active_menu_png:'' ?>">
             <i class="nav-icon fas fa-cog"></i>
             <p>Pengaturan</p>

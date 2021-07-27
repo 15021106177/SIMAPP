@@ -1,0 +1,9 @@
+{
+    "name": "codeigniter/simapp",
+    "description": "The Codeigniter Framework",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.18"
+    }
+}
