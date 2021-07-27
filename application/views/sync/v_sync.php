@@ -37,18 +37,17 @@
                 </button>
             </div>
         </div>
-        <div class="card-body">
-            <?php echo form_open_multipart('sync/syncSimak'); ?>
-            <h2>Import Data SIMAK</h2>
-            <input type="file" name="csvsimak" accept="csv">
-            <br>
-            <br>
-            <button type="submit" name="import">Import Data</button>
-            <?php echo form_close(); ?>
-        </div>
-
-        <!-- card footer -->
-        <div class="card-footer"></div>
+        <?php echo form_open_multipart('sync/syncSimak'); ?>
+            <div class="card-body">
+                <h2>Import Data SIMAK</h2>
+                <br>
+                <input type="file" class="form-control-file" name="csvsimak" accept="csv">
+            </div>
+            <!-- card footer -->
+            <div class="card-footer">
+                <button type="submit" class="btn btn-success" name="import">Import Data</button> 
+            </div>
+        <?php echo form_close(); ?>
     </div>
 
  </section>
