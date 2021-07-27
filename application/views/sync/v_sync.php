@@ -19,42 +19,79 @@
 
     <div class="flash-data-gagal" data-flashdatagagal="<?= $this->session->flashdata('gagal'); ?>"></div>
 
-    <!-- Main content -->
-    <section class="content">
-
-        <!-- Default box -->
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">
-                    Sinkronisasi Data dengan SIMAKAPP
-                </h3>
-
-                <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="card-body">
-                <?php echo form_open_multipart('sync/syncSimak'); ?>
-                <h2>Import Data SIMAK</h2>
-                <input type="file" name="csvsimak" accept="csv">
-                <br>
-                <br>
-                <button type="submit" name="import">Import Data</button>
-                <?php echo form_close(); ?>
-            </div>
-            <!-- /.card-body -->
-            <div class="card-footer">
+    <section class="container-fluid">
+        <form class="form-horizontal" action="<?= base_url()?>Sync/formcsv" method="post" name="uploadCSV"
+            enctype="multipart/form-data">
+            <div class="input-row">
+                <label class="col-md-4 control-label">Choose CSV File</label> <input
+                    type="file" name="file" id="file" accept=".csv">
+                <button type="submit" id="submit" name="import"
+                    class="btn-submit">Import</button>
+                <br />
 
             </div>
-            <!-- /.card-footer-->
-        </div>
-        <!-- /.card -->
-
+            <div id="labelError"></div>
+        </form>
     </section>
-    <!-- /.content -->
+    <section class="container-fluid">
+        <?php
+        $sqlSelect = "SELECT * FROM users";
+        $result = mysqli_query($conn, $sqlSelect);
+                    
+        if (mysqli_num_rows($result) > 0) {
+        ?>
+        <table id='userTable'>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+
+                </tr>
+            </thead>
+            <?php
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+
+            <tbody>
+                <tr>
+                    <td><?php  echo $row['userId']; ?></td>
+                    <td><?php  echo $row['userName']; ?></td>
+                    <td><?php  echo $row['firstName']; ?></td>
+                    <td><?php  echo $row['lastName']; ?></td>
+                </tr>
+            <?php
+            }
+            ?>
+            </tbody>
+        </table>
+        <?php } ?>
+    </section>
+
 </div>
+
+<script type="text/javascript">
+	$(document).ready(
+	function() {
+		$("#frmCSVImport").on(
+		"submit",
+		function() {
+
+			$("#response").attr("class", "");
+			$("#response").html("");
+			var fileType = ".csv";
+			var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+("
+					+ fileType + ")$");
+			if (!regex.test($("#file").val().toLowerCase())) {
+				$("#response").addClass("error");
+				$("#response").addClass("display-block");
+				$("#response").html(
+						"Invalid File. Upload : <b>" + fileType
+								+ "</b> Files.");
+				return false;
+			}
+			return true;
+		});
+	});
+</script>
