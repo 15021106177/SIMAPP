@@ -1,6 +1,6 @@
 {
     "name": "codeigniter/simapp",
-    "description": "The Codeigniter Framework",
+    "description": "codeigniter",
     "type": "project",
     "license": "MIT",
     "require": {
