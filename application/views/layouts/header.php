@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SIMAPP | <?=$title;?></title>
+  <title>InspireAset | <?=$title;?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -110,7 +110,7 @@
     <a href="index3.html" class="brand-link">
       <img src="<?=base_url()?>src/backend/dist/img/AdminLTELogo.png" class="brand-image"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">SIMAPP</span>
+      <span class="brand-text font-weight-light">InspireAset</span>
     </a>
 
     <!-- Sidebar -->
